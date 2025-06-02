@@ -39,7 +39,7 @@
     lng: 29.916,
     year: 1999,
     magnitude: 7.6,
-    description: "The 1999 Izmit earthquake resulted in localized land subsidence and coastal changes due to strong ground motion and liquefaction."
+    description: `The 1999 Izmit earthquake resulted in localized land subsidence and coastal changes due to strong ground motion and liquefaction. <a href="https://link-springer-com.kyoto-u.idm.oclc.org/article/10.1007/s00254-007-0803-x" target="_blank">[1]</a> <a href="https://www-sciencedirect-com.kyoto-u.idm.oclc.org/science/article/pii/S0267726103001404">[2]</a>`
   },
   {
      title: "Inskip Point, Australia",
@@ -73,13 +73,13 @@
           });
 
           const infoWindow = new google.maps.InfoWindow({
-            content: `<div>
+            content: `
               <strong>${event.title}</strong><br>
-              Year: ${event.year}<br>
-             Magnitude: ${event.magnitude !== null ? event.magnitude : '-'}<br>
-             Description: ${event.description}
-   </div>`
-});
+              Year：${event.year}<br>
+              Magnitude：${event.magnitude}<br>
+              Description：${event.description}
+            `
+          });
 
           marker.addListener("click", () => {
             infoWindow.open(map, marker);
